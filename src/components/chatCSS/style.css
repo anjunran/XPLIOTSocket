@@ -1,0 +1,28 @@
+.container-menu {
+  position: relative;
+  flex: 1 1 70%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 1em;
+}
+.main-items {
+  position: relative;
+  width: 60%;
+}
+
+li {
+  margin: 0 0.1rem;
+  padding: 0 0.9rem;
+  transition: 0.5s ease-in-out;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li:hover {
+  background: rgba(124, 109, 233, 0.281);
+  border-radius: 16px;
+}
