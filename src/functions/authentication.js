@@ -2,7 +2,7 @@ import { firebase, auth } from "../../firebaseConfig";
 export class Authentication {
   constructor() {
     this.authUpdatedStatus = {
-      online: false,
+      online: true,
       loggedUser: {},
       set setUser(result) {
         if (this.online === false && void 0 !== result) this.loggedUser = {};
@@ -32,6 +32,7 @@ export class Authentication {
       const result = await auth.signInWithPopup(provider);
 
       this.authUpdatedStatus.setUser = result;
+      console.log(this.authUpdatedStatus);
     } catch (error) {
       console.error(JSON.stringify(error.message));
     }
@@ -39,7 +40,6 @@ export class Authentication {
     // console.log(auth);
     // console.log(firebase);
     // console.log(result);
-    // console.log(this.authUpdatedStatus);
     // this.authUpdatedStatus.prototype._isUserSubscribed = function () {};
     // this.authUpdatedStatus.prototype._lastSignedOn = function () {};
     // this.authUpdatedStatus.prototype._subcribedOn = function () {};
