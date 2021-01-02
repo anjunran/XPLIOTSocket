@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./styles.css";
 import Navbar from "./components/navbar";
 import SocketChatApp from "./components/socketChatApp";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { authContext } from "./contexts/loginContext";
 
 export default function App() {
+  const { online } = useContext(authContext);
   return (
     <Router>
       <div className="App">
-        <header></header>
+        <header>{online ? "Welcome!" : "Discover More!"}</header>
         <nav>
           <div className="site-brand">
             <Link to="/">
